@@ -4,9 +4,8 @@
 	.module("ZonngoComparador")
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
-		.when('/product', {
-			templateUrl: '',
-			controller:""
+		.when('/', {
+			templateUrl: ''
 		});
 
 	}])
