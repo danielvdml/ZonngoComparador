@@ -45,6 +45,7 @@
             <div class="collapse navbar-collapse" id="main-nav-collapse">
                 <div class="container">
                     <ul class="nav navbar-nav navbar-center">
+
                         <li class="dropdown yamm-fw"><a href="#">PAGINAS<i class="drop-caret" data-toggle="dropdown"></i></a>
                             <ul class="dropdown-menu">
                                 <li class="yamm-content">
@@ -198,7 +199,8 @@
                                 </li>
                             </ul>
                         </li>
-
+                        
+                        <!--Categorias y modelosd los productos por marca-->>
                         <li class="dropdown yamm-fw" ng-repeat="categoria in Categorias">
                             <a href="#">{{categoria.desc}}<i class="drop-caret" data-toggle="dropdown"></i></a>
                             <ul class="dropdown-menu">
@@ -227,21 +229,29 @@
         <div class="container">
             <div class="row" data-gutter="15">
                 
+                <!--Sidebar Izquierdo de pagina principal Muestra las Categorias de los productos-->
+
                 <sidebar-menu-category class="col-md-2"></sidebar-menu-category>
                 
+                <!--Banner Central de pagina principal muestra imagen de producto mas buscado-->
                 <banner-center class="col-md-7"></banner-center>
 
+                <!--Sidebar derecho muestra modelos de productos mas buscados en la ultima semana-->
                 <sidebar-rigth-product class="col-md-3"></sidebar-rigth-product>
             </div>
+
             <div class="gap gap-small"></div> 
 
-            <content-secundary></content-secundary>
+            <!--Muestra carouseles de productos recomendados los carouseles estan separados por categoria-->
+            <content-secundary data={{Categorias}}></content-secundary>
 
             <div class="gap gap-small" ></div>
         </div>
 
+        <!--Footer-->
         <footer class="main-footer" main-footer></footer>
-        
+
+        <!--Copyright-->
         <copyright></copyright>
 
     </div>
@@ -256,9 +266,12 @@
     <script src="js/custom.js"></script>
 
     <!--Librerias de Angular-->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/angular-animate.min.js"></script>
+    <script src="js/app/angular.min.js"></script>
+    <script src="js/app/angular-route.min.js"></script>
+    <script src="js/app/libraries/angular-animate.min.js"></script>
+    <script src="js/app/libraries/angular-aria.min.js"></script>
+    <script src="js/app/libraries/angular-messages.min.js"></script>
+    <script src="js/app/libraries/angular-material.min.js"></script>
 
     <!--App-->
     <script src="js/app/app.js"></script>
@@ -273,6 +286,8 @@
     <!--Directivas-->
     <script src="js/app/directives/directives.js"></script>
 
+    <!--Autocomplete-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 </body>
 
 </html>
